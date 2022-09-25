@@ -57,6 +57,7 @@
             <div class="col-md-6">
                 <select name="p_insurance" class="form-control" id="p_insurance" >
                     <option value="" disabled selected hidden>Click to select your insurance company</option>
+                    <option value="-">None</option>
                     <option value="First Assurance Company Limited">First Assurance Company Limited</option>
                     <option value="G.A. Insurance Ltd">G.A. Insurance Ltd</option>
                     <option value="AAR Insurance Africa">AAR Insurance Africa</option>
