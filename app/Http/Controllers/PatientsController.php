@@ -64,4 +64,30 @@ class PatientsController extends Controller
         return view('patients', ['data' => $data]);
     }
 
+    public function search(Request $request){
+//        $search_text = $request->search;
+//        $patients = Patient::where('p_name', 'LIKE', '%'.$search_text.'%')->get();
+//
+//        return view('patients_search', compact('patients'));
+
+//        if (request('search')) {
+//            $patients = Patient::where('p_name', 'like', '%' . request('search') . '%')->get();
+//        } else {
+//            $patients = Patient::all();
+//        }
+//
+//        return view('patients_search')->with('patients', $patients);
+
+        $patients_query = Patient::query();
+        $search_param = $request->query('q');
+        if ($search_param){
+            $patients_query = Patient::search($search_param);
+
+        }
+        $patients = $patients_query->get();
+
+        return view('patients_search', compact('patients', 'search_param'));
+
+    }
+
 }

@@ -84,7 +84,7 @@
 
 
         </style>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
 
     <body>
@@ -102,16 +102,30 @@
         </div>
         <div>
             <h3 style="margin-bottom: 12px">Number of patients : 34</h3>
-            <form class="form-inline my-2 my-lg-0" style="display: flex">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search for a patient in the database." aria-label="Search" style="width: 80%; margin-right: 12px">
-                <a href="#">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                        </svg>
-                    </button>
-                </a>
-            </form>
+{{--            <form action="">--}}
+                <div style="display: flex;">
+{{--                    <div class="form-group form-inline">--}}
+{{--                        <input type="text" class="form-control-sm" id="search" name="search" aria-describedby="search" placeholder="Database Record Search">--}}
+{{--                    </div>--}}
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="text" class="form-control" id="search" name="search" placeholder="Database Record Search">
+                    </div>
+                    <div>
+{{--                        <form action="{{ route('search') }}" method="get">--}}
+{{--                            <div class="btn btn-md btn-outline-success" style="margin-left: 10px" >--}}
+{{--                                Search--}}
+{{--                            </div>--}}
+{{--                        </form>--}}
+                        <a href="{{ route('search') }}">
+                            <span class="btn btn-md btn-outline-success">
+                                Search
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+{{--            </form>--}}
+
             <div style="margin-top: 20px">
 
                     <table class="table table-striped">
@@ -270,7 +284,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
+{{--    <script type="text/javascript">--}}
+{{--        $('#search').on('keyup', function (){--}}
+{{--            $value = $(this).val();--}}
+{{--            $.ajax({--}}
+{{--                type:'get',--}}
+{{--                url:'{{route('search')}}',--}}
+{{--                data:{'search':$value},--}}
 
+{{--                success:function(data){--}}
+{{--                    console.log(data);--}}
+{{--                    $('#Content').html(data)--}}
+{{--                }--}}
+{{--            });--}}
+{{--        })--}}
+
+{{--    </script>--}}
     </body>
 
     </html>

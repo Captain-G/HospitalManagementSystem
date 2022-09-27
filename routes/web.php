@@ -37,6 +37,10 @@ Route::post('/addPatient', [PatientsController::class, 'addPatient'])->name('add
 Route::get('/allPatients', [PatientsController::class, 'allPatients'])->name('allPatients');
 Route::post('/edit/{id}', [PatientsController::class, 'edit'])->name('edit');
 Route::post('/delete/{id}', [PatientsController::class, 'delete'])->name('delete');
+Route::get('/search', [PatientsController::class, 'search'])->name('search');
 
 
 Route::get('/branches', [GoogleController::class, 'index'])->name('branches');
+
+
+
