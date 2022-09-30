@@ -101,7 +101,8 @@
             </button>
         </div>
         <div>
-            <h3 style="margin-bottom: 12px">Number of patients : 34</h3>
+
+            <h3 style="margin-bottom: 12px">Number of patients : {{ count($data) }}</h3>
 {{--            <form action="">--}}
                 <div style="display: flex;">
 {{--                    <div class="form-group form-inline">--}}
@@ -179,7 +180,10 @@
                                 </div>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-outline-dark btn-sm">View</button>
+                                <form action="{{ route('viewPatient', $am->id) }}" method="get">
+                                    @csrf
+                                    <button type="submit" class="btn btn-outline-dark btn-sm">View</button>
+                                </form>
                             </td>
                         </tr>
 

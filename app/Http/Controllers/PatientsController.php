@@ -63,6 +63,11 @@ class PatientsController extends Controller
         $data = Patient::all();
         return view('patients', ['data' => $data]);
     }
+    public function viewPatient($id){
+        $viewedPatient = Patient::find($id);
+        $viewedPatient->save();
+        return view('viewPatient',compact('viewedPatient'));
+    }
 
     public function search(Request $request){
 //        $search_text = $request->search;
@@ -77,7 +82,7 @@ class PatientsController extends Controller
 //        }
 //
 //        return view('patients_search')->with('patients', $patients);
-
+        dd("It works");
         $patients_query = Patient::query();
         $search_param = $request->query('q');
         if ($search_param){
